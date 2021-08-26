@@ -1,7 +1,5 @@
 package org.exemple;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class TesteProjeto {
 
     private static final double DIAPROFESSOR = 85.35;
@@ -23,7 +21,7 @@ public class TesteProjeto {
 
         cauculaSalario(proffesor01, 20);
         cauculaSalario(desenvolvedor01, 20);
-        cauculaSalario(desenvolvedor02, 20);
+        cauculaSalario(desenvolvedor02, 15);
         cauculaSalario(gerente, 20);
     }
 
