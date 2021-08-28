@@ -7,6 +7,8 @@ public class TesteProjeto {
     private static final double DIADESENVOLVEDOR = 115;
 
     public static void main(String[] args){
+        String texto = "texto";
+        System.out.println("A string é igual :" + texto.equals(texto));
         Funcionario proffesor01 = new Professor(DIAPROFESSOR);
         proffesor01.setName("Fernanda");
 
