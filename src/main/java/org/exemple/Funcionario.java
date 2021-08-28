@@ -1,6 +1,10 @@
 package org.exemple;
 
 public interface Funcionario {
-    int id = 0;
-    String name = "";
+
+    String getName();
+    void setName(String name);
+
+    double getSalario();
+    void setSalario(double slario);
 }

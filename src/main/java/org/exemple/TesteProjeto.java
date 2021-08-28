@@ -1,7 +1,5 @@
 package org.exemple;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class TesteProjeto {
 
     private static final double DIAPROFESSOR = 85.35;
@@ -9,46 +7,49 @@ public class TesteProjeto {
     private static final double DIADESENVOLVEDOR = 115;
 
     public static void main(String[] args){
-        Professor proffesor01 = new Professor();
+        Funcionario proffesor01 = new Professor();
         proffesor01.setName("Fernanda");
 
-        Desenvolvedor desenvolvedor01 = new Desenvolvedor();
+        Funcionario desenvolvedor01 = new Desenvolvedor();
         desenvolvedor01.setName("Paulo Uilian");
 
-        Desenvolvedor desenvolvedor02 = new Desenvolvedor();
+        Funcionario desenvolvedor02 = new Desenvolvedor();
         desenvolvedor02.setName("Josimar");
 
-        Gerente gerente = new Gerente();
+        Funcionario gerente = new Gerente();
         gerente.setName("Lary");
 
         cauculaSalario(proffesor01, 20);
         cauculaSalario(desenvolvedor01, 20);
-        cauculaSalario(desenvolvedor02, 20);
+        cauculaSalario(desenvolvedor02, 15);
         cauculaSalario(gerente, 20);
     }
 
     // Calcula o salário do funcionário de acordo com a quantidade de dias trabalhados
     private static void cauculaSalario(Funcionario funcionario, int dias){
         if(funcionario instanceof Professor){
-            ((Professor) funcionario).setSalario(dias * DIAPROFESSOR);
-            System.out.printf("O profesor %s, vai receber o salário de R$: %.2f%n",
-                    ((Professor) funcionario).getName(),
-                    ((Professor) funcionario).getSalario());
+            funcionario.setSalario(dias * DIAPROFESSOR);
+            exibeSalario(funcionario, "professor");
         }
 
         else if(funcionario instanceof Gerente){
-            ((Gerente) funcionario).setSalario(dias * DIAGERENTE);
-            System.out.printf("O gerente %s, vai receber o salário de R$: %.2f%n",
-                    ((Gerente) funcionario).getName(),
-                    ((Gerente) funcionario).getSalario());
+            funcionario.setSalario(dias * DIAGERENTE);
+            exibeSalario(funcionario, "gerente");
         }
 
         else if(funcionario instanceof Desenvolvedor){
-            ((Desenvolvedor) funcionario).setSalario(dias * DIADESENVOLVEDOR);
-            System.out.printf("O desenvovedor %s, vai receber o salário de R$: %.2f%n",
-                    ((Desenvolvedor) funcionario).getName(),
-                    ((Desenvolvedor) funcionario).getSalario());
+            funcionario.setSalario(dias * DIADESENVOLVEDOR);
+            exibeSalario(funcionario, "desenvolvedor");
         }
+    }
+
+    // Exibe o salário de cada funcionario
+    private static void exibeSalario(Funcionario funcionario, String cargo){
+
+        System.out.printf("O(A) %s(a) %s, vai receber o salário de R$: %.2f%n",
+                cargo,
+                funcionario.getName(),
+                funcionario.getSalario());
     }
 
 }

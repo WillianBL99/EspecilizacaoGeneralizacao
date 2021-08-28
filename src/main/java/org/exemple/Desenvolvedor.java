@@ -1,30 +1,25 @@
 package org.exemple;
 
 public class Desenvolvedor implements  Funcionario{
-    private int id;
     private String name;
     private double salario;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public double getSalario() {
         return salario;
     }
 
+    @Override
     public void setSalario(double salario) {
         this.salario = salario;
     }
