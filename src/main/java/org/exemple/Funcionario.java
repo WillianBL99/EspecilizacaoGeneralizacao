@@ -1,10 +1,22 @@
 package org.exemple;
 
-public interface Funcionario {
+abstract class Funcionario {
+    String name;
+    double salario;
 
-    String getName();
-    void setName(String name);
+    String getName() {
+        return name;
+    }
 
-    double getSalario();
-    void setSalario(double slario);
+    void setName(String name){
+        this.name = name;
+    };
+
+    double getSalario(){
+        return salario;
+    };
+
+    void setSalario(double salario){
+        this.salario = salario;
+    };
 }
